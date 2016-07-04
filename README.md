@@ -168,7 +168,8 @@ import NCMB
 
 * コードを書いていく前に、必ずmBaaSで発行されたAPIキーの設定とSDKの初期化を行う必要があります
 * `AppDelegate.swift`の`didFinishLaunchingWithOptions`メソッドに次のコードを書きます
- ```swift
+
+```swift
 // APIキーの設定とSDK初期化 
 NCMB.setApplicationKey("YOUR_APPLICATION_KEY", clientKey: "YOUR_CLIENT_KEY")
 ```
@@ -192,12 +193,12 @@ NCMB.setApplicationKey("YOUR_APPLICATION_KEY", clientKey: "YOUR_CLIENT_KEY")
  * APIキーの設定とSDK初期化コードの下にサンプルコードを書くと、すぐに動作確認が可能です
  ```swift
 func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-  // APIキーの設定とSDK初期化
-  NCMB.setApplicationKey("YOUR_APPLICATION_KEY", clientKey: "YOUR_CLIENT_KEY")
-  // ↓　ここにサンプルコードを実装　↓
-
-
-  return true
+    // APIキーの設定とSDK初期化
+    NCMB.setApplicationKey("YOUR_APPLICATION_KEY", clientKey: "YOUR_CLIENT_KEY")
+    // ↓　ここにサンプルコードを実装　↓
+    
+    
+    return true
 }
 ```
  
@@ -206,10 +207,8 @@ func application(application: UIApplication, didFinishLaunchingWithOptions launc
  ```swift
 // クラスのNCMBObjectを作成
 let obj = NCMBObject(className: "TestClass")
-
 // オブジェクトに値を設定
 obj.setObject("Hello, NCMB!", forKey: "message")
-
 // データストアへの登録
 obj.saveInBackgroundWithBlock { (error: NSError!) -> Void in
     if error != nil {
