@@ -147,9 +147,11 @@ import NCMB
  1. `AppDelegate.swift`上で右クリック＞「New File...」＞「Header File」＞「Next」をクリックするします
  1. 「`Save As:`」の欄に「`XXXXXXX-Bridging-Header`」と記入（「`XXXXXXX`」のところは任意ですが、プロジェクト名にするのが一般的です）し、「Create」をクリックします
 * 作成したファイルの中に下記の内容を追記します
- ```objc
+
+```objc
 #import <NCMB/NCMB.h>
 ```
+
 * 作成した`XXXXXXX-Bridging-Header.h`ファイルを次の手順で読み込みます
  1. プロジェクト＞「Build Settings」をクリックします
  1. 「Objective-C Bridging Header」（右上の検索を使うとすぐ見つけられます）をダブルクリックすると入力用のふきだしが出てきます
@@ -167,7 +169,7 @@ import NCMB
 ![Xcode](/readme-img/icon_xcode.png)
 
 * コードを書いていく前に、必ずmBaaSで発行されたAPIキーの設定とSDKの初期化を行う必要があります
-* `AppDelegate.swift`の`didFinishLaunchingWithOptions`メソッドに次のコードを書きます
+* `AppDelegate.swift`の`didFinishLaunchingWithOptions`メソッド内に次のコードを書きます
 
 ```swift
 // APIキーの設定とSDK初期化 
@@ -204,7 +206,8 @@ func application(application: UIApplication, didFinishLaunchingWithOptions launc
  
 ### サンプルコード（データストア）
 * 次のコードはmBaaSのデータストアに保存先の「`TestClass`」というクラスを作成し、「`message`」というフィールドへ「`Hello, NCMB!`」というメッセージ（文字列）を保存するものです
- ```swift
+
+```swift
 // クラスのNCMBObjectを作成
 let obj = NCMBObject(className: "TestClass")
 // オブジェクトに値を設定
