@@ -193,7 +193,8 @@ NCMB.setApplicationKey("YOUR_APPLICATION_KEY", clientKey: "YOUR_CLIENT_KEY")
 
 * `AppDelegate.swift`の`didFinishLaunchingWithOptions`メソッド内に書いた処理は、アプリの起動時に実行されます
  * APIキーの設定とSDK初期化コードの下にサンプルコードを書くと、すぐに動作確認が可能です
- ```swift
+
+```swift
 func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
     // APIキーの設定とSDK初期化
     NCMB.setApplicationKey("YOUR_APPLICATION_KEY", clientKey: "YOUR_CLIENT_KEY")
@@ -203,7 +204,7 @@ func application(application: UIApplication, didFinishLaunchingWithOptions launc
     return true
 }
 ```
- 
+
 ### サンプルコード（データストア）
 * 次のコードはmBaaSのデータストアに保存先の「`TestClass`」というクラスを作成し、「`message`」というフィールドへ「`Hello, NCMB!`」というメッセージ（文字列）を保存するものです
 
