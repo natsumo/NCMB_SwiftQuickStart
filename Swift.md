@@ -24,11 +24,11 @@
 * ダッシュボードが表示されたら、「アプリの新規作成」を行います
  * すでに別のアプリを作成済みの場合は、ヘッダーの「＋新しいアプリ」をクリックします
 
-![新規アプリケーション作成](readme-img/create_app.png)
+ ![新規アプリケーション作成](readme-img/create_app.png)
 
 * 「アプリ名」を入力し「新規作成」をクリックすると、APIキー（アプリケーションキーとクライアントキー）が発行されます
 
-![APIキー発行](readme-img/create_app2.png)
+ ![APIキー発行](readme-img/create_app2.png)
 
 * APIキーは後ほどXcodeアプリで使います
 
@@ -39,7 +39,7 @@
 * Xcodeでプロジェクトを作成します
  * 既存のプロジェクトを利用する場合はこの作業は不要です
 
-![Xcodeプロジェクト](/readme-img/XcodeProject.png)
+ ![Xcodeプロジェクト](/readme-img/XcodeProject.png)
 
 * プロジェクトは一度閉じておきます
 
@@ -65,10 +65,12 @@
 
 3. podfileを開いて、下記(※1)に記載しているの内容に書き換えてください
  * __Xcode7以上の場合__（`use_frameworks!`を使用する方法）
- ![podfile1](/readme-img/podfile1.png)
+
+    ![podfile1](/readme-img/podfile1.png)
 
  * __Xcode7未満または上記方法が利用できない場合__
- ![podfile2](/readme-img/podfile2.png)
+
+    ![podfile2](/readme-img/podfile2.png)
 
  ※いずれの場合も「`YOUR_APP_TARGET`」の部分は、作成しているXcodeプロジェクトのプロジェクト名に書き換えてください
 4. 編集したpodfileを保存をします
@@ -84,6 +86,7 @@
  * Cocoapodsを利用して導入したSDKの場合は上記コマンドの実行だけで更新可能です。
 * ローカルに置いたSDKのリポジトリを指定していた場合は以下の方法で更新できます
  * `use_framework!`が使用できない環境の場合はコメントアウトしてください
+
  ![podUpdate](/readme-img/podUpdate.png)
 
  * 「`YOUR_APP_TARGET`」の部分は、作成しているXcodeプロジェクトのプロジェクト名に書き換えてください
@@ -135,9 +138,7 @@
 * `AppDelegate.swift`の冒頭に次のコードを追記して、インストールしたSDKを読み込みます
  * 他のファイルでもSDKを使用する場合は都度追記が必要です
 
-```swift
-import NCMB
-```
+   ![loading_sdk1](/readme-img/loading_sdk1.png)
 
 #### Xcode7未満または上記方法が利用できない場合
 * `AppDelegate.swift`と同じディレクトリに、次の手順でヘッダーファイルを作成します
@@ -146,9 +147,7 @@ import NCMB
 
 * 作成したファイルの中に下記の内容を追記します
 
-```objc
-#import <NCMB/NCMB.h>
-```
+ ![loading_sdk2](/readme-img/loading_sdk2.png)
 
 <div style="page-break-before:always"></div>
 
@@ -158,7 +157,7 @@ import NCMB
  1. そこに先ほど作成した「`XXXXXXX-Bridging-Header.h`」を下図のようにドラッグ＆ドロップします
  1. ふきだしが閉じ、「`XXXXXXX-Bridging-Header.h`」のディレクトリが入力されたことが確認できれば読み込み完了です
 
- ![ブリッジファイル読み込み](/readme-img/BridgingHeader.png)
+   ![ブリッジファイル読み込み](/readme-img/BridgingHeader.png)
 
 ### SDKをダウンロードして利用する方法
 
@@ -172,17 +171,17 @@ import NCMB
 
 * コードを書いていく前に、必ずmBaaSで発行されたAPIキーの設定とSDKの初期化を行う必要があります
 * `AppDelegate.swift`の`didFinishLaunchingWithOptions`メソッド内に次のコードを書きます
-![setApiKey&init](/readme-img/setApiKey&init.png)
+
+ ![setApiKey&init](/readme-img/setApiKey&init.png)
 
 ![ダッシュボード](/readme-img/icon_dashboard.png)
 
 * 上の「`YOUR_APPLICATION_KEY`」と「`YOUR_CLIENT_KEY`」は、mBaaSのダッシュボードで「アプリの新規作成」を行ったときに発行されたAPIキーに置き換えます
- * アプリ作成時のAPIキー発行画面を閉じてしまった場合は、「アプリ設定」＞「基本」で確認できます。
- * 「コピー」ボタンを使用してコピーしてください。
- ![APIキー確認](/readme-img/check_apikey.png)
+ * アプリ作成時のAPIキー発行画面を閉じてしまった場合は、「アプリ設定」＞「基本」で確認できます。「コピー」ボタンを使用してコピーしてください。
 
-* これで連携作業は完了です！
-* サンプルコードを書いて実際にmBaaSを使ってみましょう
+   ![APIキー確認](/readme-img/check_apikey.png)
+
+* これで連携作業は完了です！サンプルコードを書いて実際にmBaaSを使ってみましょう
 
 <div style="page-break-before:always"></div>
 
@@ -193,12 +192,12 @@ import NCMB
 * `AppDelegate.swift`の`didFinishLaunchingWithOptions`メソッド内に書いた処理は、アプリの起動時に実行されます
  * APIキーの設定とSDK初期化コードの下にサンプルコードを書くと、すぐに動作確認が可能です
 
-![sampleCode1](/readme-img/sampleCode1.png)
+   ![sampleCode1](/readme-img/sampleCode1.png)
 
 ### サンプルコード（データストア）
 * 次のコードはmBaaSのデータストアに保存先の「`TestClass`」というクラスを作成し、「`message`」というフィールドへ「`Hello, NCMB!`」というメッセージ（文字列）を保存するものです
 
-![sampleCode2](/readme-img/sampleCode2.png)
+  ![sampleCode2](/readme-img/sampleCode2.png)
 
 ### アプリを実行してmBaaSのダッシュボードを確認する
 * アプリを実機またはシュミレーターで実行します
@@ -207,4 +206,4 @@ import NCMB
 
 * アプリが起動されたら、mBaaSのダッシュボードで「データストア」から、データが保存されていることを確認できます
 
-![DBサンプル結果](/readme-img/dbdemo.png)
+ ![DBサンプル結果](/readme-img/dbdemo.png)
