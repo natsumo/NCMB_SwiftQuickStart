@@ -172,15 +172,7 @@
 * コードを書いていく前に、必ずmBaaSで発行されたAPIキーの設定とSDKの初期化を行う必要があります
 * `AppDelegate.swift`の`didFinishLaunchingWithOptions`メソッド内に次のコードを書きます
 
- * Swift3.0 の場合
-
-   ![sampleCode1_Swift3](/readme-img/sampleCode1_Swift3.png)
-
- * Swift2.0 の場合
-
-   ![setApiKey&init](/readme-img/setApiKey&init.png)
-
-<div style="page-break-before:always"></div>
+ ![setApiKey&init](/readme-img/setApiKey&init.png)
 
 ![ダッシュボード](/readme-img/icon_dashboard.png)
 
