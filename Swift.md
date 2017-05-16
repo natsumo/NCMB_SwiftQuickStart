@@ -172,7 +172,15 @@
 * コードを書いていく前に、必ずmBaaSで発行されたAPIキーの設定とSDKの初期化を行う必要があります
 * `AppDelegate.swift`の`didFinishLaunchingWithOptions`メソッド内に次のコードを書きます
 
- ![setApiKey&init](/readme-img/setApiKey&init.png)
+ * Swift3.0 の場合
+
+   ![sampleCode1_Swift3](/readme-img/sampleCode1_Swift3.png)
+
+ * Swift2.0 の場合
+
+   ![setApiKey&init](/readme-img/setApiKey&init.png)
+
+<div style="page-break-before:always"></div>
 
 ![ダッシュボード](/readme-img/icon_dashboard.png)
 
@@ -192,12 +200,28 @@
 * `AppDelegate.swift`の`didFinishLaunchingWithOptions`メソッド内に書いた処理は、アプリの起動時に実行されます
  * APIキーの設定とSDK初期化コードの下にサンプルコードを書くと、すぐに動作確認が可能です
 
-   ![sampleCode1](/readme-img/sampleCode1.png)
+* Swift3.0 の場合
+
+ ![sampleCode1_Swift3](/readme-img/sampleCode1_Swift3.png)
+
+* Swift2.0 の場合
+
+ ![sampleCode1](/readme-img/sampleCode1.png)
+
+<div style="page-break-before:always"></div>
 
 ### サンプルコード（データストア）
 * 次のコードはmBaaSのデータストアに保存先の「`TestClass`」というクラスを作成し、「`message`」というフィールドへ「`Hello, NCMB!`」というメッセージ（文字列）を保存するものです
 
-  ![sampleCode2](/readme-img/sampleCode2.png)
+ * Swift3.0 の場合
+
+    ![sampleCode2_Swift3](/readme-img/sampleCode2_Swift3.png)
+
+ * Swift2.0 の場合
+
+    ![sampleCode2](/readme-img/sampleCode2.png)
+
+<div style="page-break-before:always"></div>
 
 ### アプリを実行してmBaaSのダッシュボードを確認する
 * アプリを実機またはシュミレーターで実行します
