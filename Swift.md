@@ -1,5 +1,7 @@
-# クイックスタートについて
-このページでは、mobile backendをiOSアプリと連携させる手順を紹介します
+# Swift クイックスタート
+_2017/05/17作成_
+
+ニフティクラウド mobile backend を iOS アプリ(Swift)と連携させる手順を紹介します
 
 ## 目次
 * アプリの新規作成
@@ -12,7 +14,7 @@
 * APIキーの設定とSDKの初期化
 * サンプルコードの実装
  * サンプルコード（データストア）
- * アプリを実行してmBaaSのダッシュボードを確認する
+ * アプリを実行してニフティクラウド mobile backend のダッシュボードを確認する
 
 <div style="page-break-before:always"></div>
 
@@ -20,9 +22,9 @@
 
 ![ダッシュボード](readme-img/icon_dashboard.png)
 
-* ニフティクラウドmobile backendにログインします
+* ニフティクラウド mobile backend にログインします<br>https://console.mb.cloud.nifty.com
 * ダッシュボードが表示されたら、「アプリの新規作成」を行います
- * すでに別のアプリを作成済みの場合は、ヘッダーの「＋新しいアプリ」をクリックします
+* すでに別のアプリを作成済みの場合は、ヘッダーの「＋新しいアプリ」をクリックします
 
  ![新規アプリケーション作成](readme-img/create_app.png)
 
@@ -50,19 +52,16 @@
 
 ![ターミナル](/readme-img/icon_terminal.png)
 
-#### （１）CocoaPodsをインストールする
-* CocoaPodsがすでにインストールされている方はこちらの作業は不要です
+#### (1)CocoaPodsをインストールする
+※ CocoaPodsがすでにインストールされている方はこちらの作業は不要です。
 
 1. 「`$ sudo gem install cocoapods`」コマンドでcocoaPodsをインストールを行います
 2. 「`$ pod setup`」コマンドでセットアップを行います
 3. 「`$ pod --version`」コマンドでバージョン情報が表示されればインストール完了です
 
-#### （２）SDKライブラリのインストール
+#### (2)SDKライブラリのインストール
 1. 「`$ cd`」コマンドでXcodeプロジェクト内にある「プロジェクト名.xcodeproj」と同じディレクトリに移動します
 2. 「`$ pod init`」コマンドでPodfile(インストールするライブラリを指定するファイル)を作成します
-
-<div style="page-break-before:always"></div>
-
 3. podfileを開いて、下記(※1)に記載しているの内容に書き換えてください
  * __Xcode7以上の場合__（`use_frameworks!`を使用する方法）
 
@@ -124,7 +123,7 @@
 * ARCが無効な環境でSDKを利用する場合は、以下の手順でSDKのみARCを有効にする設定を行います
  * ターゲットの一覧から対象のターゲットを選択
  * 「Build Phases」のタブにある「Compile Sources」を開く
- * ニフティクラウド mobile backendのiOS SDKを構成する全ファイルを選択
+ * ニフティクラウド mobile backend の iOS SDK を構成する全ファイルを選択
  * ダブルクリックして「Compiler Flags」に「-fobjc-arc」を設定
 
 <div style="page-break-before:always"></div>
@@ -169,19 +168,19 @@
 
 ![Xcode](/readme-img/icon_xcode.png)
 
-* コードを書いていく前に、必ずmBaaSで発行されたAPIキーの設定とSDKの初期化を行う必要があります
+* コードを書いていく前に、必ずニフティクラウド mobile backend で発行されたAPIキーの設定とSDKの初期化を行う必要があります
 * `AppDelegate.swift`の`didFinishLaunchingWithOptions`メソッド内に次のコードを書きます
 
  ![setApiKey&init](/readme-img/setApiKey&init.png)
 
 ![ダッシュボード](/readme-img/icon_dashboard.png)
 
-* 上の「`YOUR_APPLICATION_KEY`」と「`YOUR_CLIENT_KEY`」は、mBaaSのダッシュボードで「アプリの新規作成」を行ったときに発行されたAPIキーに置き換えます
+* 上の「`YOUR_APPLICATION_KEY`」と「`YOUR_CLIENT_KEY`」は、ニフティクラウド mobile backend のダッシュボードで「アプリの新規作成」を行ったときに発行されたAPIキーに置き換えます
  * アプリ作成時のAPIキー発行画面を閉じてしまった場合は、「アプリ設定」＞「基本」で確認できます。「コピー」ボタンを使用してコピーしてください。
 
    ![APIキー確認](/readme-img/check_apikey.png)
 
-* これで連携作業は完了です！サンプルコードを書いて実際にmBaaSを使ってみましょう
+* これで連携作業は完了です！サンプルコードを書いて実際にニフティクラウド mobile backend を使ってみましょう
 
 <div style="page-break-before:always"></div>
 
@@ -203,7 +202,7 @@
 <div style="page-break-before:always"></div>
 
 ### サンプルコード（データストア）
-* 次のコードはmBaaSのデータストアに保存先の「`TestClass`」というクラスを作成し、「`message`」というフィールドへ「`Hello, NCMB!`」というメッセージ（文字列）を保存するものです
+* 次のコードはニフティクラウド mobile backend のデータストアに保存先の「`TestClass`」というクラスを作成し、「`message`」というフィールドへ「`Hello, NCMB!`」というメッセージ（文字列）を保存するものです
 
  * Swift3.0 の場合
 
@@ -215,11 +214,11 @@
 
 <div style="page-break-before:always"></div>
 
-### アプリを実行してmBaaSのダッシュボードを確認する
+### アプリを実行してニフティクラウド mobile backend のダッシュボードを確認する
 * アプリを実機またはシュミレーターで実行します
 
 ![ダッシュボード](/readme-img/icon_dashboard.png)
 
-* アプリが起動されたら、mBaaSのダッシュボードで「データストア」から、データが保存されていることを確認できます
+* アプリが起動されたら、ニフティクラウド mobile backend のダッシュボードで「データストア」から、データが保存されていることを確認できます
 
  ![DBサンプル結果](/readme-img/dbdemo.png)
